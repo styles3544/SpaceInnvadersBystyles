@@ -1,30 +1,29 @@
-## Space Invaders game by styles
+## Space Invaders game by using PyGame module of python
 
-> Space Invaders video game with styles
 
-## How To Play
+## How To Play/ Steps to Reproduce
 
-+ Clone the repository OR download by clicking Download Zip as shown below:
++ Fork the repository
 
-[](img.png)
++ Clone it on your local computer OR download in zip format
 
-+ Extract the file and run the game by any of the following mentioned methods in [Running](##Running) section
++ Extract the file and run the game by following any of the following mentioned methods in [Running](##Running) section
 
 
 ## Running
 
-###### Method 1:
+### Method 1:
 
 ![](htog.gif)
 
 
-###### Method 2:
+### Method 2:
 
 ![](htog1.gif)
 
 
 
-###### Method 3:
+### Method 3:
 
 ![](htog3.gif)
 

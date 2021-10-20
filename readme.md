@@ -3,7 +3,7 @@
 
 ## How To Play/ Steps to Reproduce
 
-+ Fork the repository
++ Fork the repository and give a star if you like it
 
 + Clone it on your local computer OR download in zip format
 

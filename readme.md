@@ -7,6 +7,11 @@
 
 + Clone it on your local computer OR download in zip format
 
++ Run
+    python -m venv .venv            (it will create you a virtual environment)
+    source .venv/bin/activate       (it will activate your virtual environment)
+    pip install -r requirements.txt (it will install necessary packages)
+
 + Extract the file and run the game by following any of the following mentioned methods in [Running](##Running) section
 
 

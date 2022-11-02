@@ -23,7 +23,12 @@ def reset_player_X(player_X):
         player_X = 750
     return player_X
 
-
+'''
+- x1, x2, y1, y2 are of the type 'float' and the function returns a boolean output.
+- The function 1) calculates the Eucledian distance between the bullet and the object 
+               2) checks if the eucledian distance is less than 50
+               3) Returns true or false acorrdingly
+'''
 def isCollision(x1, x2, y1, y2):
     distance = math.sqrt((math.pow(x1 - x2, 2)) + (math.pow(y1 - y2, 2)))
     if distance <= 50:
@@ -235,3 +240,16 @@ if __name__ == "__main__":
         show_player(player)
         show_score(score, scoreX, scoreY)
         pygame.display.update()
+        
+        
+        
+       
+  '''
+  Test for the iscollision function:
+  
+  def test(num : int, msg : str, func_out, exp_out) :
+    if func_out == exp_out :
+        print(f"+ TEST [{num}] PASSED")
+    else :
+        print(f"- TEST [{num}] FAILED; {msg}")
+  '''

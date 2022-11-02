@@ -1,3 +1,4 @@
+from multiprocessing import Event
 import pygame
 import random
 import math
@@ -16,7 +17,18 @@ def game_over_display():
     screen.blit(game_over_text, (190, 250))
 
 
-def reset_player_X(player_X):
+def reset_player_X(player_X: float) -> float:
+    """
+    Resets the x-coordinates of the player if outside the screen
+
+    Parameters:
+    ----
+    player_X <float>: Current x-coordinate
+
+    Return:
+    ----
+    player_X <float>: Updated x-coordinate
+    """
     if player_X <= 16:
         player_X = 16
     elif player_X >= 750:
@@ -51,7 +63,31 @@ def show_bullet(bullet):
     return bullet
 
 
-def event_action(event, bullet, player):
+def event_action(event: object,
+                bullet: dict[str, float],
+                player: dict[str, float]) -> \
+                tuple[dict[str, float], dict[str, float], bool]:
+    """
+    Given an event (key), updates the player and bullet dictionary
+
+    Parameters:
+    ----
+    event <class 'Event'>: pygame.event.Event(), a representation of a key.
+    
+    bullet <dict[str, float]>: bullet associated data dictionary
+    
+    player <dict[str, float]>: player associated data dictionary
+    
+    Return:
+    ----
+    tuple(bullet, player, running)
+
+    bullet <dict[str, float]>: bullet associated data dictionary
+    
+    player <dict[str, float]>: player associated data dictionary
+    
+    running <bool>: indicator whether to keep running the loop
+    """
     running = True
     if event.type == pygame.QUIT:
         running = False
@@ -88,7 +124,18 @@ def update_invaders_x(invaders):
     return invaders
 
 
-def bullet_movement(bullet):
+def bullet_movement(bullet: dict[str, float]) -> dict[str, float]:
+    """
+    Given an event (key), updates the player and bullet dictionary
+
+    Parameters:
+    ----
+    bullet <dict[str, int]>: bullet associated data dictionary
+    
+    Return:
+    ----
+    bullet <dict[str, int]>: bullet associated data dictionary
+    """
     if bullet["y"] <= 0:
         bullet["y"] = 600
         bullet["state"] = "rest"

@@ -47,8 +47,8 @@ def show_bullet(bullet):
 
 
 def event_action(event, bullet, player):
+    running = True
     if event.type == pygame.QUIT:
-        global running
         running = False
 
     # Controling the player movement from the arrow keys
@@ -61,7 +61,7 @@ def event_action(event, bullet, player):
             # Fixing the change of direction of bullet
             bullet = fix_bullet_direction(bullet, player)
 
-    return bullet, player
+    return bullet, player, running
 
 
 def fix_bullet_direction(bullet, player):
@@ -192,7 +192,7 @@ if __name__ == "__main__":
         # RGB
         screen.fill((0, 0, 0))
         for event in pygame.event.get():
-            bullet, player = event_action(event, bullet, player)
+            bullet, player, running = event_action(event, bullet, player)
 
         # updating the invaders x-coordinate
         invaders = update_invaders_x(invaders)

@@ -244,12 +244,12 @@ if __name__ == "__main__":
         
         
        
-  '''
-  Test for the iscollision function:
+#   '''
+#   Test for the iscollision function:
   
-  def test(num : int, msg : str, func_out, exp_out) :
-    if func_out == exp_out :
-        print(f"+ TEST [{num}] PASSED")
-    else :
-        print(f"- TEST [{num}] FAILED; {msg}")
-  '''
+#   def test(num : int, msg : str, func_out, exp_out) :
+#     if func_out == exp_out :
+#         print(f"+ TEST [{num}] PASSED")
+#     else :
+#         print(f"- TEST [{num}] FAILED; {msg}")
+#   '''

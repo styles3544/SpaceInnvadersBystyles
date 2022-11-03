@@ -4,6 +4,18 @@ import random
 import math
 from pygame import mixer
 
+pygame.init()
+screen_width = 800
+screen_height = 600
+screen = pygame.display.set_mode((screen_width, screen_height))
+
+bulletImage = pygame.image.load('data/bullet.png')
+
+mixer.init()
+mixer.music.load('data/background.wav')
+mixer.music.play(-1)
+game_over_font = pygame.font.Font('freesansbold.ttf', 64)
+
 
 # FUNCTIONS #
 
@@ -95,9 +107,9 @@ def event_action(event: object,
     # Controling the player movement from the arrow keys
     if event.type == pygame.KEYDOWN:
         if event.key == pygame.K_LEFT:
-            player["x"] -= 1.7
+            player["x"] -= 5
         if event.key == pygame.K_RIGHT:
-            player["x"] += 1.7
+            player["x"] += 5
         if event.key == pygame.K_SPACE:
             # Fixing the change of direction of bullet
             bullet = fix_bullet_direction(bullet, player)

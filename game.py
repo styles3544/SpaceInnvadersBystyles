@@ -11,8 +11,20 @@ def show_score(score, x, y):
     score_text = font.render("Points: " + str(score), True, (255, 255, 255))
     screen.blit(score_text, (x, y))
 
-
+    
 def game_over_display():
+    """
+    Display game-over when the player has lesser than or equal to an 80 point difference from the invader and the invader is above 450 points.
+
+    Parameters:
+    ----
+    N.A
+
+    Display:
+    ----
+    "GAME OVER" <string> in defined font and at approriate position 
+    
+    """  
     game_over_text = game_over_font.render("GAME OVER", True, (255, 255, 255))
     screen.blit(game_over_text, (190, 250))
 
@@ -35,12 +47,7 @@ def reset_player_X(player_X: float) -> float:
         player_X = 750
     return player_X
 
-'''
-- x1, x2, y1, y2 are of the type 'float' and the function returns a boolean output.
-- The function 1) calculates the Eucledian distance between the bullet and the object 
-               2) checks if the eucledian distance is less than 50
-               3) Returns true or false acorrdingly
-'''
+
 def isCollision(x1, x2, y1, y2):
     distance = math.sqrt((math.pow(x1 - x2, 2)) + (math.pow(y1 - y2, 2)))
     if distance <= 50:
@@ -106,6 +113,23 @@ def event_action(event: object,
 
 
 def fix_bullet_direction(bullet, player):
+    """
+    Given the x coordinate of the player (value), shoots the bullet from that position
+    
+    Parameters:
+    ----
+    event <class 'Event'>: pygame.event.Event(), a representation of a key.
+    
+    bullet <dict[str, float]>: bullet associated data dictionary
+    
+    player <dict[str, float]>: player associated data dictionary
+    
+    Return:
+    ----
+
+    bullet <dict[str, float]>: bullet associated data dictionary
+  
+    """    
     if bullet["state"] == "rest":
         bullet["x"] = player["x"]
         bullet = show_bullet(bullet)

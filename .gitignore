@@ -1,0 +1,7 @@
+# Virtual environments
+.venv
+# Cache
+__pycache__
+.pytest_cache
+# Coverage
+.coverage
